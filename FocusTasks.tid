@@ -4,8 +4,10 @@ tags:
 title: $:/plugins/pjerkins/aw-focus-tasks/FocusTasks
 type: text/vnd.tiddlywiki
 
-<$macrocall
- $name="list-tagged-draggable"
- tag="Focus"
- subFilter="tag[Task]!tag[Done]"
- itemTemplate="$:/plugins/pjerkins/aw-nested-tasks/ViewTemplates/ChildTasksReorderingDragTemplate" />
+<$set name="sortList" filter="[list[Focus]]">
+    <$macrocall
+     $name="list-tagged-draggable"
+     tag="Focus"
+     subFilter="tag[Task]!tag[Done]sortby<sortList>"
+     itemTemplate="$:/plugins/pjerkins/aw-nested-tasks/ViewTemplates/ChildTasksReorderingDragTemplate" />
+</$set>
