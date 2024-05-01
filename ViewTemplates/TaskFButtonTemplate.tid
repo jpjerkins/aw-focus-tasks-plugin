@@ -1,0 +1,23 @@
+created: 20240423034444605
+creator: jpjerkins
+modified: 20240423034444605
+creator: jpjerkins
+tags: TaskActionBarControl
+title: $:/plugins/pjerkins/aw-focus-tasks/ViewTemplates/TaskFButtonTemplate
+list-after: $:/plugins/pjerkins/aw-basic-tasks/ViewTemplates/DeleteTaskButton
+
+\import [[$:/plugins/pjerkins/aw-basic-tasks/ViewTemplates/TaskActionBar3Dot]]
+
+<% if [is[current]!tag[Focus]] %>
+    <$button>
+        <$action-listops $tiddler=<<currentTiddler>> $field="tags" $subfilter="+[append[Focus]]" />
+        <<closeActionBarActions>>
+        F!
+    </$button>
+<% else %>
+    <$button>
+        <$action-listops $tiddler=<<currentTiddler>> $field="tags" $subfilter="-Focus" />
+        !F
+        <<closeActionBarActions>>
+    </$button>
+<% endif %>

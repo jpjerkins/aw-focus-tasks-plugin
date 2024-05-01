@@ -1,0 +1,19 @@
+created: 20240501031655440
+modified: 20240501032431679
+tags: 
+title: $:/plugins/pjerkins/aw-focus-tasks/FocusAllExpanded
+type: text/vnd.tiddlywiki
+
+\define dropActions()
+<$action-listops $tiddler=<<actionTiddler> $tags="-Focus" />
+\end
+
+<$droppable actions=<<dropActions>> >
+    <h2>Focus Tasks</h2>
+    [[Prioritize Focus Tasks|$:/plugins/pjerkins/aw-focus-tasks/FocusTasks]] | [[All Tasks|$:/plugins/pjerkins/aw-nested-tasks/AllParentsExpanded]]
+</$droppable>
+<$set name=sortList filter="[[Focus]list[]]">
+    <$list filter="[tag[Task]!tag[Done]tag[Focus]sortby<sortList>]">
+        <$transclude tiddler="$:/plugins/pjerkins/aw-nested-tasks/ViewTemplates/AllParentsExpandedTemplate" />
+    </$list>
+</$set>

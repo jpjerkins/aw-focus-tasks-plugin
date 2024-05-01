@@ -1,0 +1,19 @@
+created: 20240416230950577
+creator: jpjerkins
+modified: 20240416230950577
+creator: jpjerkins
+tags: TaskHeaderToolbarControl
+title: $:/plugins/pjerkins/aw-focus-tasks/ViewTemplates/TaskFocusButtonTemplate
+list-after: $:/plugins/pjerkins/aw-basic-tasks/ViewTemplates/TaskDoneButtonTemplate
+
+<% if [is[current]!tag[Focus]] %>
+    <$button>
+        <$action-listops $tiddler=<<currentTiddler>> $field="tags" $subfilter="+[append[Focus]]" />
+        Focus!
+    </$button>
+<% else %>
+    <$button>
+        <$action-listops $tiddler=<<currentTiddler>> $field="tags" $subfilter="-Focus" />
+        !Focus
+    </$button>
+<% endif %>

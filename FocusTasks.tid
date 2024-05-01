@@ -1,0 +1,11 @@
+created: 20240501031655440
+modified: 20240501031655440
+tags: 
+title: $:/plugins/pjerkins/aw-focus-tasks/FocusTasks
+type: text/vnd.tiddlywiki
+
+<$macrocall
+ $name="list-tagged-draggable"
+ tag="Focus"
+ subFilter="tag[Task]!tag[Done]"
+ itemTemplate="$:/plugins/pjerkins/aw-nested-tasks/ViewTemplates/ChildTasksReorderingDragTemplate" />
